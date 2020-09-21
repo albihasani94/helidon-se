@@ -91,6 +91,7 @@ public final class Main {
                 .register(metrics)                  // Metrics at "/metrics"
                 .register("/greet", greetService)
                 .register("/movies", movieService)
+                .get("/inline", (request, response) -> response.send("Hello world"))
                 .build();
     }
 
