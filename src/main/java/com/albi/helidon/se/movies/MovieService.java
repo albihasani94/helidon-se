@@ -1,18 +1,17 @@
 package com.albi.helidon.se.movies;
 
-import io.helidon.webserver.*;
+import io.helidon.webserver.Handler;
+import io.helidon.webserver.Routing;
+import io.helidon.webserver.Service;
 
 import javax.json.Json;
 import javax.json.JsonBuilderFactory;
 import java.util.Collections;
 import java.util.List;
-import java.util.function.BiConsumer;
 
 public class MovieService implements Service {
 
     private static final JsonBuilderFactory JSON = Json.createBuilderFactory(Collections.emptyMap());
-
-    private static final List<String> MOVIES = List.of("Batman", "Man of Steel", "Shrek");
 
     @Override
     public void update(Routing.Rules rules) {
@@ -23,7 +22,8 @@ public class MovieService implements Service {
 
     private Handler getListHandler() {
         return (request, response) -> response.send(
-                JSON.createArrayBuilder(MOVIES)
+                JSON.createArrayBuilder(
+                        List.of("Batman", "Man of Steel", "Shrek"))
                         .build()
         );
     }
