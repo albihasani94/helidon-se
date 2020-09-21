@@ -85,7 +85,7 @@ public class GreetService implements Service {
         JsonObject returnObject = JSON.createObjectBuilder()
                 .add("message", msg)
                 .build();
-        response.send("test");
+        response.send(returnObject);
     }
 
     private static <T> T processErrors(Throwable ex, ServerRequest request, ServerResponse response) {
