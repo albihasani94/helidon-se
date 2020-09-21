@@ -1,5 +1,6 @@
-package com.albi.helidon.se.movies;
+package com.albi.helidon.se.movies.service;
 
+import com.albi.helidon.se.movies.model.Movie;
 import io.helidon.webserver.Handler;
 import io.helidon.webserver.Routing;
 import io.helidon.webserver.Service;
@@ -21,17 +22,15 @@ public class MovieService implements Service {
     }
 
     private Handler getListHandler() {
-        return (request, response) -> response.send(
-                JSON.createArrayBuilder(
-                        List.of("Batman", "Man of Steel", "Shrek"))
-                        .build()
+        return (request, response) -> response.send(List.of(
+                new Movie("The Dark Knight", 2006),
+                new Movie("Man of Steel", 2011),
+                new Movie("Shrek", 2003)
+                )
         );
     }
 
     private Handler getTestHandler() {
-        return (request, response) -> response.send(
-                JSON.createObjectBuilder()
-                        .add("message", "test")
-                        .build());
+        return (request, response) -> response.send("test");
     }
 }

@@ -28,6 +28,10 @@
             <artifactId>helidon-media-jsonp</artifactId>
         </dependency>
         <dependency>
+            <groupId>io.helidon.media</groupId>
+            <artifactId>helidon-media-jackson</artifactId>
+        </dependency>
+        <dependency>
             <groupId>io.helidon.config</groupId>
             <artifactId>helidon-config-yaml</artifactId>
         </dependency>
