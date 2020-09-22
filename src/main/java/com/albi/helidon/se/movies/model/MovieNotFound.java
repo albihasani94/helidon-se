@@ -1,4 +1,4 @@
-package com.albi.helidon.se.movies.exception;
+package com.albi.helidon.se.movies.model;
 
 public class MovieNotFound {
     String message;

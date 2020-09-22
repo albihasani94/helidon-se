@@ -1,23 +1,18 @@
 package com.albi.helidon.se.movies.service;
 
-import com.albi.helidon.se.movies.exception.MovieNotFound;
 import com.albi.helidon.se.movies.model.Movie;
+import com.albi.helidon.se.movies.model.MovieNotFound;
 import io.helidon.common.http.Http;
 import io.helidon.webserver.Routing;
 import io.helidon.webserver.ServerRequest;
 import io.helidon.webserver.ServerResponse;
 import io.helidon.webserver.Service;
 
-import javax.json.Json;
-import javax.json.JsonBuilderFactory;
 import java.time.LocalDateTime;
-import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
 public class MovieService implements Service {
-
-    private static final JsonBuilderFactory JSON = Json.createBuilderFactory(Collections.emptyMap());
 
     @Override
     public void update(Routing.Rules rules) {
